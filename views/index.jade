@@ -1,0 +1,58 @@
+doctype html
+html
+	head
+		title= title
+		link(rel="stylesheet",href="http://127.0.0.1:1337/css")
+	body
+		div(class="content")
+			div(class="hd")
+				img(alt="盒子logo",src="img/jimu.png")
+			div(class="cd")
+				div(class="choice")
+					div(class="tab")
+						mixin pet(name)
+								li= name
+						ul
+							li(class="active") 2015
+							+pet('2014')
+							+pet('2014以前')
+					div(class="tablist")
+						div(class="cont_tab_1")
+							p  2015年12月 积木盒子宣布新战略 推出全球化智能综合理财平台
+							p  2015年7月 正式切换至民生银行 盒子树立P2P资金存管新标杆
+							p  2015年4月 英国天达集团领投 盒子完成C轮融资共8400万美元
+							p  2015年2月 盒子交易额突破50亿
+						div(class="clearfix")
+				hr(class="split")
+				hr(class="label")
+				span(class="label")	为什么选择积木盒子
+				hr(class="label")
+				div(class="features")
+					mixin feature(src,tit,p1)
+							img(src=src,alt=p1)
+							p(class=tit)= p1
+					div(class="feature-safe")
+						+feature('img/why1.png','tit','安全保障')
+						each item in ['第三方担保、保险金','风险互助金、法律援助金','多重安全防线','为投资者提供保障']
+							p= item
+					div(class="feature-property")
+						+feature('img/why2.png','tit','合规透明')
+						each item in ['交易资金由民生银行全程保管','保障资金流转清晰、可查','交易真实、合法','让投资者安心']
+							p= item
+					div(class="feature-service")
+						+feature('img/why3.png','tit','贴心服务')
+						each item in ['积木盒子只做一件事','为投资双方倾力服务','积木盒子全员参与','为你提供一站式服务']
+							p= item
+					div(class="feature-safe")
+						+feature('img/why4.png','tit','安全保障')
+						each item in ['第三方担保、保险金','风险互助金、法律援助金','多重安全防线','为投资者提供保障']
+							p= item
+					div(class="clearfix")
+				hr(class="split")
+			div(class="logo-history-wrap")
+				hr(class="label")
+				span(class="label")	logo的故事
+				hr(class="label")
+				div(class="logo-history")
+					each item in ["基于我们的使命和定位，2015年12月，积木盒子推出了新的logo与域名jimu.com","新的标志传达了积木全员希望为用户带来的服务体验：简洁活跃、色彩缤纷、智能搭配.","简洁活跃：从积木的基本造型出发，一切可能性都来自于用户对于我们的期许和丰富的想象力.","色彩缤纷：在这里只有缤纷和欢乐，理财也可以丰富多彩的。","智能搭配：所有的色彩和造型都来自于合理的布局和规划。欢乐的背后，是专业和严谨的计算。自由和想象，是基于细节完美的处理。"]
+						p= item
